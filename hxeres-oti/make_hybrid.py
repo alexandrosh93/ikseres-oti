@@ -17,7 +17,7 @@ the crest on rotating rays, confetti, emoji (✈️ 🇨🇾 🇵🇱 👑), flo
 """
 import sys, os, math, random, subprocess, wave
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter, ImageChops, ImageEnhance
+from PIL import Image, ImageDraw, ImageFilter, ImageChops, ImageEnhance, ImageOps
 from make_video import (HERE, W, H, FPS, ease, ease_out, ease_out_back, with_alpha, place, glow_of, fnt, Intro,
                         calendar_icon, LIME, sfx_ding, sfx_boom, band_noise, env_t)
 from make_story import (Story, fit_text, plain_text, emoji_img, tile_parts, odometer_strip, digit_tile, roll, step_value,
@@ -394,9 +394,15 @@ class Hybrid(Modern):
     def m_fact(self, sc, line, T):
         T1 = self.seg_end(line)
         plate = self.dark_plate(sc.get('photo'), 0.24)
-        crest = Image.open(os.path.join(HERE, self.team['crest'])).convert('RGBA')
-        crest = crest.resize((int(crest.width * 230 / crest.height), 230), Image.LANCZOS)
-        cglow, _ = glow_of(crest, 20, (150, 255, 110))
+        paths = sc.get('crests') or [self.team['crest']]          # two crests = derby: side by side with «VS»
+        ch = 230 if len(paths) == 1 else 200
+        crests = []
+        for pth in paths:
+            c = Image.open(os.path.join(HERE, pth)).convert('RGBA')
+            c = c.resize((int(c.width * ch / c.height), ch), Image.LANCZOS)
+            crests.append((c, glow_of(c, 20, (150, 255, 110))[0]))
+        xs = [0] if len(crests) == 1 else [-215, 215]
+        vs = fit_text('VS', 'yellow', 200, 110) if len(crests) == 2 else None
         R = 560
         rays = Image.new('L', (R, R), 0)
         dr = ImageDraw.Draw(rays)
@@ -423,10 +429,12 @@ class Hybrid(Modern):
                 im = text_img(wd['text'], F('Black', size), col, tracking=-int(size * 0.03))
                 lines.append((im, self.at(line, wd['at']), y))
                 y += int(size * 1.02)
-        mascot, tMa = None, None
-        if self.team.get('mascot'):
-            m = Image.open(os.path.join(HERE, self.team['mascot'])).convert('RGBA')
-            mascot = m.resize((int(m.width * 270 / m.height), 270), Image.LANCZOS)
+        mascots, tMa = [], None
+        for i, mp in enumerate(sc.get('mascots') or ([self.team['mascot']] if self.team.get('mascot') else [])):
+            m = Image.open(os.path.join(HERE, mp)).convert('RGBA')
+            m = m.resize((int(m.width * 270 / m.height), 270), Image.LANCZOS)
+            mascots.append(ImageOps.mirror(m) if i == 1 else m)    # the second one comes in from the right
+        if mascots:
             tMa = self.at(line, sc.get('mascot_at', 0.5))
             self.events += [(tMa, 'whoosh'), (tMa + 0.35, 'pop')]
         stamp = None
@@ -466,20 +474,25 @@ class Hybrid(Modern):
                 lay.putalpha(rr.point(lambda v: int(v * k)))
                 place(fr, lay, XC, Yc, 0.6 + 0.4 * ease_out(u / 0.6))
                 e = ease_out_back(u / 0.6, 1.6)
-                im = crest
-                sv = u - 0.8
-                if 0 < sv < 0.6:                          # shine sweep over the crest
-                    im = crest.copy()
-                    band = Image.new('L', im.size, 0)
-                    bx = -im.width * 0.6 + im.width * 2.2 * ease(sv / 0.6)
-                    ImageDraw.Draw(band).polygon([(bx, 0), (bx + 70, 0), (bx - 90, im.height), (bx - 160, im.height)], fill=160)
-                    band = ImageChops.multiply(band.filter(ImageFilter.GaussianBlur(14)), im.getchannel('A'))
-                    wl = Image.new('RGBA', im.size, (255, 255, 255, 0))
-                    wl.putalpha(band)
-                    im.alpha_composite(wl)
-                fl = 7 * math.sin(2 * math.pi * 0.5 * u)
-                place(fr, cglow, XC, Yc + fl, max(e, 0.15), 0.7 * min(1, u / 0.3))
-                place(fr, im, XC, Yc + fl, max(e, 0.15), min(1, u / 0.15), rot=30 * (1 - ease_out(u / 0.6)))
+                for (crest, cglow), dx in zip(crests, xs):
+                    im = crest
+                    sv = u - 0.8
+                    if 0 < sv < 0.6:                      # shine sweep over the crest
+                        im = crest.copy()
+                        band = Image.new('L', im.size, 0)
+                        bx = -im.width * 0.6 + im.width * 2.2 * ease(sv / 0.6)
+                        ImageDraw.Draw(band).polygon([(bx, 0), (bx + 70, 0), (bx - 90, im.height), (bx - 160, im.height)], fill=160)
+                        band = ImageChops.multiply(band.filter(ImageFilter.GaussianBlur(14)), im.getchannel('A'))
+                        wl = Image.new('RGBA', im.size, (255, 255, 255, 0))
+                        wl.putalpha(band)
+                        im.alpha_composite(wl)
+                    fl = 7 * math.sin(2 * math.pi * 0.5 * u + dx / 100)
+                    x = XC + dx * min(1, ease_out(u / 0.6))
+                    place(fr, cglow, x, Yc + fl, max(e, 0.15), 0.7 * min(1, u / 0.3))
+                    place(fr, im, x, Yc + fl, max(e, 0.15), min(1, u / 0.15), rot=(30 if dx <= 0 else -30) * (1 - ease_out(u / 0.6)))
+                if vs is not None and u > 0.45:
+                    v = u - 0.45
+                    place(fr, vs, XC, Yc, 1 + 0.8 * (1 - ease_out(v / 0.2, 3)), min(1, v / 0.08))
             if tCf is not None and t > tCf:               # confetti behind the words
                 d = ImageDraw.Draw(fr)
                 for p in conf:
@@ -514,11 +527,15 @@ class Hybrid(Modern):
                 k = 1 + 1.4 * (1 - ease_out(v / 0.18, 3))
                 place(fr, stamp['glow'], stamp['x'], stamp['y'], k, 0.8 * min(1, v / 0.1), rot=stamp['rot'])
                 place(fr, stamp['im'], stamp['x'], stamp['y'], k, min(1, v / 0.06), rot=stamp['rot'])
-            if mascot is not None and t > tMa:
+            if mascots and t > tMa:
                 v = t - tMa
                 e = ease_out_back(v / 0.55, 1.5)
-                place(fr, mascot, XC - 330 - 420 * (1 - e), Yc + 40 + 260 * (1 - e) + 10 * math.sin(2 * math.pi * 1.1 * v),
-                      1, min(1, v / 0.2), rot=-16 * (1 - e) + 3 * math.sin(3.4 * v))
+                for i, mascot in enumerate(mascots):
+                    sg = -1 if i == 0 else 1                  # left one from the left, right one from the right
+                    xm = XC + sg * (330 if len(mascots) == 1 else 380)
+                    ym = Yc + (40 if len(mascots) == 1 else 800)   # derby: both mascots below the words
+                    place(fr, mascot, xm + sg * 420 * (1 - e), ym + 260 * (1 - e) + 10 * math.sin(2 * math.pi * 1.1 * v + i),
+                          1 if len(mascots) == 1 else 0.8, min(1, v / 0.2), rot=sg * 16 * (1 - e) + 3 * math.sin(3.4 * v + i))
         return draw
 
     # ---------------------------------------------------------------- stats / streak from template 1 on big photos

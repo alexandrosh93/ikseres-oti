@@ -1,0 +1,356 @@
+{
+  "theme": "hybrid",
+  "photo": "posts/apoel100_gsp_lyon_wide.jpg",
+  "team": {
+    "name": "ΝΤΕΡΜΠΙ",
+    "color": [
+      110,
+      120,
+      140
+    ],
+    "crest": "assets/omonoia_crest.png",
+    "mascot": "assets/omonoia_mascot.png"
+  },
+  "caption_case": "as_is",
+  "tail": 0.6,
+  "elevenlabs_language": "el",
+  "hook": {
+    "text": "Ομόνοια και Απόελ, το μεγαλύτερο ντέρμπι της Κύπρου!"
+  },
+  "hook_photo": "posts/apoel100_gsp_lyon_wide.jpg",
+  "hook_focus": [
+    0.5,
+    0.45
+  ],
+  "hook_replace": {
+    "Απόελ": "ΑΠΟΕΛ"
+  },
+  "hook_accent": [
+    "Ομόνοια",
+    "ΑΠΟΕΛ",
+    "ντέρμπι"
+  ],
+  "lines": [
+    "Όλα ξεκίνησαν το χίλια εννιακόσια σαράντα οκτώ, όταν ποδοσφαιριστές που έφυγαν από τον Απόελ, ίδρυσαν την Ομόνοια.",
+    "Το πρώτο τους ντέρμπι, στις δώδεκα Δεκεμβρίου του χίλια εννιακόσια πενήντα τρία, έληξε μηδέν μηδέν!",
+    "Από τότε έχουν παίξει πάνω από διακόσιες φορές, και ο Απόελ έχει τις περισσότερες νίκες.",
+    "Τη μεγαλύτερη νίκη όμως την έχει η Ομόνοια, ένα εντυπωσιακό πέντε μηδέν, το χίλια εννιακόσια ογδόντα οκτώ!",
+    "Σε πρωταθλήματα, ο Απόελ μετράει είκοσι εννιά, και η Ομόνοια είκοσι δύο.",
+    "Στις είκοσι μία Νοεμβρίου, γράφεται το επόμενο κεφάλαιο!"
+  ],
+  "cta": "Γράψε στα σχόλια το προγνωστικό σου, και κάνε φόλοου στο Κουπονάκι για περισσότερα!",
+  "emoji": {
+    "ντέρμπι": "🔥",
+    "νίκες": "💙",
+    "εντυπωσιακό": "💚",
+    "κεφάλαιο": "⚔️"
+  },
+  "caption_replace": {
+    "χίλια εννιακόσια σαράντα οκτώ": "1948",
+    "δώδεκα Δεκεμβρίου": "12 Δεκεμβρίου",
+    "χίλια εννιακόσια πενήντα τρία": "1953",
+    "μηδέν μηδέν": "0-0",
+    "διακόσιες": "200",
+    "πέντε μηδέν": "5-0",
+    "χίλια εννιακόσια ογδόντα οκτώ": "1988",
+    "είκοσι εννιά": "29",
+    "είκοσι δύο": "22",
+    "είκοσι μία Νοεμβρίου": "21 Νοεμβρίου",
+    "Απόελ": "ΑΠΟΕΛ",
+    "φόλοου": "follow",
+    "Κουπονάκι": "Kouponaki"
+  },
+  "scenes": [
+    {
+      "type": "date",
+      "backdrop": "posts/apoel100_history.jpg",
+      "label": "ΛΕΥΚΩΣΙΑ · Η ΑΡΧΗ",
+      "day": "ΙΔΡΥΣΗ",
+      "day_size": 190,
+      "month": "της Ομόνοιας",
+      "year": "1948",
+      "day_at": {
+        "word": "ξεκίνησαν"
+      },
+      "month_at": {
+        "word": "ίδρυσαν"
+      },
+      "year_at": {
+        "word": "χίλια"
+      },
+      "year_end": {
+        "word": "οκτώ",
+        "edge": "end"
+      },
+      "photo_card": "posts/omonoia_fans70s.jpg",
+      "photo_at": {
+        "word": "ποδοσφαιριστές"
+      },
+      "photo_x": 820,
+      "photo_y": 450,
+      "photo_rot": 6,
+      "photo_width": 320
+    },
+    {
+      "type": "score",
+      "photo": "posts/apoel100_history.jpg",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "timeline": false,
+      "home": "ΟΜΟΝΟΙΑ",
+      "home_color": [
+        0,
+        140,
+        70
+      ],
+      "home_crest": "assets/omonoia_crest.png",
+      "away": "ΑΠΟΕΛ",
+      "away_color": [
+        30,
+        80,
+        190
+      ],
+      "away_crest": "assets/apoel_crest.png",
+      "home_at": {
+        "word": "πρώτο"
+      },
+      "away_at": {
+        "word": "πρώτο",
+        "offset": 0.25
+      },
+      "score_at": {
+        "word": "ντέρμπι"
+      },
+      "steps": [
+        {
+          "value": [
+            0,
+            0
+          ],
+          "at": {
+            "word": "ντέρμπι"
+          },
+          "label": "12.12.1953"
+        },
+        {
+          "value": [
+            0,
+            0
+          ],
+          "at": {
+            "word": "έληξε"
+          },
+          "label": "ΤΕΛΙΚΟ"
+        }
+      ],
+      "badge": {
+        "text": "ΤΟ ΠΡΩΤΟ ΝΤΕΡΜΠΙ",
+        "at": {
+          "word": "ντέρμπι"
+        },
+        "x": 700,
+        "y": 560,
+        "rotate": 8
+      }
+    },
+    {
+      "type": "stats",
+      "photo": "posts/apoel100_tifo.jpg",
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "ph": 980,
+      "pill": "ΤΟ ΑΙΩΝΙΟ ΝΤΕΡΜΠΙ",
+      "pill_at": {
+        "word": "τότε"
+      },
+      "items": [
+        {
+          "value": 200,
+          "label": "ΝΤΕΡΜΠΙ ΚΑΙ ΠΑΝΩ",
+          "color": "lime",
+          "hero": true,
+          "at": {
+            "word": "διακόσιες"
+          }
+        }
+      ]
+    },
+    {
+      "type": "score",
+      "photo": "posts/omonoia_fans_today.jpg",
+      "focus": [
+        0.45,
+        0.5
+      ],
+      "timeline": false,
+      "home": "ΟΜΟΝΟΙΑ",
+      "home_color": [
+        0,
+        140,
+        70
+      ],
+      "home_crest": "assets/omonoia_crest.png",
+      "away": "ΑΠΟΕΛ",
+      "away_color": [
+        30,
+        80,
+        190
+      ],
+      "away_crest": "assets/apoel_crest.png",
+      "home_at": {
+        "word": "ομόνοια"
+      },
+      "away_at": {
+        "word": "ομόνοια",
+        "offset": 0.25
+      },
+      "score_at": {
+        "word": "ομόνοια",
+        "offset": 0.3
+      },
+      "steps": [
+        {
+          "value": [
+            0,
+            0
+          ],
+          "at": {
+            "word": "ομόνοια"
+          },
+          "label": "1988"
+        },
+        {
+          "value": [
+            5,
+            0
+          ],
+          "at": {
+            "word": "εντυπωσιακό",
+            "offset": 0.2
+          },
+          "label": "ΜΕΓΑΛΥΤΕΡΗ ΝΙΚΗ"
+        }
+      ],
+      "badge": {
+        "text": "06.11.1988",
+        "at": {
+          "word": "χίλια"
+        },
+        "x": 765,
+        "y": 560,
+        "rotate": 9
+      }
+    },
+    {
+      "type": "table",
+      "photo": "posts/apoel100_gsp_lyon_wide.jpg",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "ph": 980,
+      "title": "ΠΡΩΤΑΘΛΗΜΑΤΑ",
+      "title_at": {
+        "word": "πρωταθλήματα"
+      },
+      "rows_at": {
+        "word": "απόελ"
+      },
+      "rows": [
+        {
+          "pos": 1,
+          "name": "ΑΠΟΕΛ",
+          "crest": "assets/apoel_crest.png",
+          "points": 29,
+          "color": [
+            30,
+            80,
+            190
+          ],
+          "points_at": {
+            "word": "εννιά"
+          }
+        },
+        {
+          "pos": 2,
+          "name": "ΟΜΟΝΟΙΑ",
+          "crest": "assets/omonoia_crest.png",
+          "points": 22,
+          "color": [
+            0,
+            140,
+            70
+          ],
+          "points_at": {
+            "word": "δύο"
+          }
+        }
+      ]
+    },
+    {
+      "type": "fact",
+      "photo": "posts/apoel100_gsp_lyon_wide.jpg",
+      "captions": false,
+      "words_style": "chunky",
+      "crest_y": 560,
+      "y": 790,
+      "crests": [
+        "assets/omonoia_crest.png",
+        "assets/apoel_crest.png"
+      ],
+      "mascots": [
+        "assets/omonoia_mascot.png",
+        "assets/apoel_mascot.png"
+      ],
+      "words": [
+        {
+          "text": "21 ΝΟΕΜΒΡΙΟΥ",
+          "color": "white",
+          "max_size": 170,
+          "at": {
+            "word": "είκοσι"
+          }
+        },
+        {
+          "text": "ΤΟ ΕΠΟΜΕΝΟ",
+          "color": "yellow",
+          "max_size": 140,
+          "at": {
+            "word": "επόμενο"
+          }
+        },
+        {
+          "text": "ΚΕΦΑΛΑΙΟ",
+          "color": "green",
+          "max_size": 160,
+          "at": {
+            "word": "κεφάλαιο"
+          }
+        }
+      ],
+      "mascot_at": {
+        "word": "γράφεται"
+      },
+      "confetti_at": {
+        "word": "κεφάλαιο"
+      },
+      "stamp": {
+        "text": "ΝΤΕΡΜΠΙ!",
+        "at": {
+          "word": "κεφάλαιο",
+          "edge": "end"
+        },
+        "x": 790,
+        "y": 380,
+        "rotate": 10
+      }
+    }
+  ],
+  "end": {
+    "photo": "posts/apoel100_gsp_lyon_wide.jpg"
+  }
+}
