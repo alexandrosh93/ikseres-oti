@@ -270,18 +270,20 @@ class Hybrid(Modern):
         tY0, tY1 = self.at(line, sc['year_at']), self.at(line, sc['year_end'])
         icon = calendar_icon(90)
         lab = self.label_img(sc['label']) if sc.get('label') else None
-        day = text_img(sc['day'], F('Black', 290), WHITE, tracking=-10, line_box=False)
+        day = text_img(sc['day'], F('Black', sc.get('day_size', 290)), WHITE, tracking=-10, line_box=False)
         month = text_img(sc['month'], F('Black', 108), WHITE, tracking=-2)
         tw, th, gap = 112, 150, 12
         strip = odometer_strip(fnt('FiraSansExtraCondensed-Black', 128), tw, th, LIME)
         bg, ov = tile_parts(tw, th)
-        rolls = [dict(target=int(c), t0=tY0 + 0.06 * i, t1=tY1 + 0.04 * i, spins=1 + i) for i, c in enumerate(sc['year'])]
+        rolls = [dict(target=int(c), t0=tY0 + 0.06 * i, t1=tY1 + 0.04 * i, spins=1 + i) if c.isdigit()
+                 else dict(sep=text_img(c, F('Black', 108), WHITE)) for i, c in enumerate(sc['year'])]   # e.g. 2005–06
         y0 = sc.get('y', 720)
         iy, ly, dy = y0 - 104, y0, y0 + 42
         my = dy + day.height + 20
         yy = my + month.height + 6
         for r in rolls:
-            self.add_ticks(lambda tt, r=r: roll(tt, r['target'], r['t0'], r['t1'], r['spins']), r['t0'], r['t1'])
+            if 'target' in r:
+                self.add_ticks(lambda tt, r=r: roll(tt, r['target'], r['t0'], r['t1'], r['spins']), r['t0'], r['t1'])
         self.events += [(tD, 'thud'), (tM, 'pop'), (tY0 - 0.35, 'pop')]
         pc = None
         if sc.get('photo_card'):                          # polaroid of the current style (e.g. the founder)
@@ -307,9 +309,15 @@ class Hybrid(Modern):
             u = t - (tY0 - 0.35)
             if u > 0:
                 k = ease_out_back(u / 0.4, 1.8)
-                for i, r in enumerate(rolls):
+                x = M
+                for r in rolls:
+                    if 'sep' in r:                        # a dash between the years: no tile, narrower step
+                        place(fr, r['sep'], x + r['sep'].width / 2, yy + th / 2, k, min(1, u / 0.15))
+                        x += r['sep'].width + gap
+                        continue
                     tile = digit_tile(strip, bg, ov, roll(t, r['target'], r['t0'], r['t1'], r['spins']))
-                    place(fr, tile, M + tw / 2 + i * (tw + gap), yy + th / 2, k, min(1, u / 0.15))
+                    place(fr, tile, x + tw / 2, yy + th / 2, k, min(1, u / 0.15))
+                    x += tw + gap
         return draw
 
     # ---------------------------------------------------------------- score: big photo + timeline + plates/tiles
@@ -518,6 +526,17 @@ class Hybrid(Modern):
         T1 = self.seg_end(line)
         P = Photo(self.load_photo(sc['photo']), sc.get('ph', 980), tuple(sc.get('focus', (0.5, 0.42))))
         inner = Story.build_stats(self, dict(sc, no_card=True), line, T)
+
+        def draw(fr, t):
+            self.photo_bg(fr, P, (t - T) / max(T1 - T, 0.1))
+            inner(fr, t)
+        return draw
+
+    def m_table(self, sc, line, T):
+        """League table of template 1 (rows slide in, points count) over a big photo."""
+        T1 = self.seg_end(line)
+        P = Photo(self.load_photo(sc['photo']), sc.get('ph', 980), tuple(sc.get('focus', (0.5, 0.42))))
+        inner = Story.build_table(self, dict(sc, no_card=True), line, T)
 
         def draw(fr, t):
             self.photo_bg(fr, P, (t - T) / max(T1 - T, 0.1))

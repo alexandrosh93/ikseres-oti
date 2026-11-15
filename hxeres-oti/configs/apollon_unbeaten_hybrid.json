@@ -1,0 +1,232 @@
+{
+  "theme": "hybrid",
+  "photo": "posts/apollon_lockerroom.jpg",
+  "team": {
+    "name": "ΑΠΟΛΛΩΝΑΣ",
+    "color": [
+      30,
+      90,
+      200
+    ],
+    "crest": "assets/apollon_crest.png",
+    "mascot": "assets/apollon_mascot.png"
+  },
+  "caption_case": "as_is",
+  "tail": 0.6,
+  "hook": {
+    "text": "Ο Απόλλωνας πήρε το πρωτάθλημα χωρίς ούτε μία ήττα!"
+  },
+  "hook_photo": "posts/apollon_lockerroom.jpg",
+  "hook_focus": [
+    0.5,
+    0.35
+  ],
+  "hook_accent": [
+    "πρωτάθλημα",
+    "ήττα"
+  ],
+  "lines": [
+    "Πάμε πίσω, στη σεζόν δύο χιλιάδες πέντε, δύο χιλιάδες έξι.",
+    "Σε είκοσι έξι αγώνες, έκανε δεκαεννιά νίκες, εφτά ισοπαλίες, και μηδέν ήττες!",
+    "Πήρε τον τίτλο με μόλις έναν βαθμό διαφορά από την Ομόνοια!",
+    "Και ήταν η μοναδική ομάδα σε όλη την Ευρώπη που τελείωσε τη σεζόν αήττητη!"
+  ],
+  "cta": "Γράψε στα σχόλια την επόμενη ιστορική στιγμή που θες να δούμε, και κάνε φόλοου στο Κουπονάκι για περισσότερα!",
+  "emoji": {
+    "ήττες": "🔥",
+    "ομόνοια": "😱",
+    "ευρώπη": "🌍"
+  },
+  "caption_replace": {
+    "δύο χιλιάδες πέντε δύο χιλιάδες έξι": "2005-06",
+    "είκοσι έξι": "26",
+    "δεκαεννιά": "19",
+    "εφτά": "7",
+    "μηδέν": "0",
+    "έναν βαθμό": "1 βαθμό",
+    "φόλοου": "follow",
+    "Κουπονάκι": "Kouponaki"
+  },
+  "scenes": [
+    {
+      "type": "date",
+      "backdrop": "posts/apollon_fans.jpg",
+      "label": "ΠΡΩΤΑΘΛΗΜΑ ΚΥΠΡΟΥ",
+      "day": "ΣΕΖΟΝ",
+      "day_size": 190,
+      "month": "Α' Κατηγορία",
+      "year": "2005–06",
+      "day_at": {
+        "word": "σεζόν"
+      },
+      "month_at": {
+        "word": "σεζόν",
+        "offset": 0.35
+      },
+      "year_at": {
+        "word": "δύο"
+      },
+      "year_end": {
+        "word": "έξι",
+        "edge": "end"
+      },
+      "photo_card": "posts/apollon_fans.jpg",
+      "photo_at": {
+        "word": "πάμε"
+      },
+      "photo_x": 820,
+      "photo_y": 450,
+      "photo_rot": 6,
+      "photo_width": 320
+    },
+    {
+      "type": "stats",
+      "photo": "posts/apollon_lineup.jpg",
+      "focus": [
+        0.5,
+        0.45
+      ],
+      "ph": 980,
+      "pill": "26 ΑΓΩΝΕΣ",
+      "pill_at": {
+        "word": "είκοσι"
+      },
+      "items": [
+        {
+          "value": 19,
+          "label": "ΝΙΚΕΣ",
+          "color": "lime",
+          "at": {
+            "word": "δεκαεννιά"
+          }
+        },
+        {
+          "value": 7,
+          "label": "ΙΣΟΠΑΛΙΕΣ",
+          "color": "yellow",
+          "at": {
+            "word": "εφτά"
+          }
+        },
+        {
+          "value": 0,
+          "label": "ΗΤΤΕΣ",
+          "color": "white",
+          "hero": true,
+          "at": {
+            "word": "μηδέν"
+          }
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "photo": "posts/apollon_cake.jpg",
+      "focus": [
+        0.6,
+        0.4
+      ],
+      "ph": 980,
+      "title": "ΒΑΘΜΟΛΟΓΙΑ 2005–06",
+      "title_at": {
+        "word": "πήρε"
+      },
+      "rows_at": {
+        "word": "τίτλο"
+      },
+      "rows": [
+        {
+          "pos": 1,
+          "name": "ΑΠΟΛΛΩΝΑΣ",
+          "crest": "assets/apollon_crest.png",
+          "points": 64,
+          "highlight": true,
+          "color": [
+            30,
+            90,
+            200
+          ],
+          "points_at": {
+            "word": "βαθμό"
+          }
+        },
+        {
+          "pos": 2,
+          "name": "ΟΜΟΝΟΙΑ",
+          "crest": "assets/omonoia_crest.png",
+          "points": 63,
+          "color": [
+            0,
+            140,
+            70
+          ],
+          "points_at": {
+            "word": "ομόνοια"
+          }
+        }
+      ],
+      "badge": {
+        "text": "+1 ΒΑΘΜΟΣ",
+        "at": {
+          "word": "διαφορά"
+        },
+        "x": 790,
+        "y": 560,
+        "rotate": 10
+      }
+    },
+    {
+      "type": "fact",
+      "photo": "posts/apollon_lockerroom.jpg",
+      "captions": false,
+      "words_style": "chunky",
+      "crest_y": 590,
+      "y": 770,
+      "words": [
+        {
+          "text": "Η ΜΟΝΑΔΙΚΗ ΟΜΑΔΑ",
+          "color": "white",
+          "max_size": 110,
+          "at": {
+            "word": "μοναδική"
+          }
+        },
+        {
+          "text": "ΣΤΗΝ ΕΥΡΩΠΗ",
+          "color": "yellow",
+          "max_size": 170,
+          "at": {
+            "word": "ευρώπη"
+          }
+        },
+        {
+          "text": "ΑΗΤΤΗΤΗ!",
+          "color": "green",
+          "max_size": 210,
+          "at": {
+            "word": "αήττητη"
+          }
+        }
+      ],
+      "mascot_at": {
+        "word": "ήταν"
+      },
+      "confetti_at": {
+        "word": "αήττητη"
+      },
+      "stamp": {
+        "text": "0 ΗΤΤΕΣ!",
+        "at": {
+          "word": "αήττητη",
+          "edge": "end"
+        },
+        "x": 800,
+        "y": 640,
+        "rotate": 12
+      }
+    }
+  ],
+  "end": {
+    "photo": "posts/apollon_lockerroom.jpg"
+  }
+}

@@ -848,7 +848,8 @@ class Story:
     # ---------------------------------------------------------------- scene: table
     def build_table(self, sc, line, T):
         """Standings snippet (pos · crest · team · points) under a photo stack, with a '+1' style badge."""
-        card = self.photo_card(sc.get('card_width', 980), sc.get('card_max_h', 520), self.load_photo(sc.get('photo')))
+        card = None if sc.get('no_card') else self.photo_card(sc.get('card_width', 980), sc.get('card_max_h', 520),
+                                                              self.load_photo(sc.get('photo')))
         card2 = self.photo_card(360, 240, self.load_photo(sc['photo2'])) if sc.get('photo2') else None
         tP = T + 0.12
         title = self.pill_img(sc['title'], 36) if sc.get('title') else None
@@ -899,7 +900,8 @@ class Story:
         Yc, Yt, Yr = 690, 985, 1095
 
         def draw(fr, t):
-            self.draw_card(fr, card, t, tP, XC, Yc)
+            if card is not None:
+                self.draw_card(fr, card, t, tP, XC, Yc)
             if card2 is not None:
                 self.draw_card(fr, card2, t, tP + 0.35, XC + 250, Yc + 140, rot_end=7)
             if title is not None and t > tT:
