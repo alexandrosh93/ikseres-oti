@@ -29,12 +29,14 @@ CACHE = os.path.join(HERE, '.cache')
 WORD = re.compile(r"\w+(?:['’-]\w+)*['’]?")
 
 
-def request(text, voice, model, settings, fmt='mp3_44100_128', tries=4):
+def request(text, voice, model, settings, fmt='mp3_44100_128', tries=4, language=None):
     key = os.environ.get('ELEVENLABS_API_KEY', 'proxy-injected')       # the session proxy replaces the placeholder
     ca = os.environ.get('SSL_CERT_FILE') or next((p for p in ('/root/.ccr/ca-bundle.crt',) if os.path.exists(p)), None)
     body = {'text': text, 'model_id': model}
     if settings:
         body['voice_settings'] = settings
+    if language:                                   # e.g. 'el': keeps the accent on standard Greek
+        body['language_code'] = language
     url = f'https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format={fmt}'
     for attempt in range(tries):
         req = urllib.request.Request(url, data=json.dumps(body).encode(), method='POST',
@@ -52,14 +54,15 @@ def request(text, voice, model, settings, fmt='mp3_44100_128', tries=4):
         time.sleep(5 * (attempt + 1))
 
 
-def one_take(texts, voice, model='eleven_v4', settings=None, sr=48000):
+def one_take(texts, voice, model='eleven_v4', settings=None, sr=48000, language=None):
     """-> [(float32 audio at sr, [[word, start, end], ...]), ...], one clip per text, cut from a single take."""
     full = ' '.join(t.strip() for t in texts)
     os.makedirs(CACHE, exist_ok=True)
-    key = hashlib.sha1(json.dumps([voice, model, settings, full], ensure_ascii=False).encode()).hexdigest()[:16]
+    key = hashlib.sha1(json.dumps([voice, model, settings, full] + ([language] if language else []),
+                               ensure_ascii=False).encode()).hexdigest()[:16]
     js = os.path.join(CACHE, f'el_{key}.json')
     if not os.path.exists(js):
-        d = request(full, voice, model, settings)
+        d = request(full, voice, model, settings, language=language)
         json.dump({'audio': d['audio_base64'], 'alignment': d.get('alignment') or d.get('normalized_alignment')},
                   open(js, 'w'))
     d = json.load(open(js))
