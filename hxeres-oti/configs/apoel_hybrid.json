@@ -1,0 +1,291 @@
+{
+  "theme": "hybrid",
+  "photo": "posts/apoel_team.jpg",
+  "team": {
+    "name": "ΑΠΟΕΛ",
+    "color": [
+      30,
+      80,
+      190
+    ],
+    "crest": "assets/apoel_crest.png",
+    "mascot": "assets/apoel_mascot.png"
+  },
+  "caption_case": "as_is",
+  "tail": 0.6,
+  "hook": {
+    "text": "Μια κυπριακή ομάδα έφτασε στους οκτώ καλύτερους του Τσάμπιονς Λιγκ!"
+  },
+  "hook_photo": "posts/apoel_team.jpg",
+  "hook_focus": [
+    0.55,
+    0.4
+  ],
+  "hook_replace": {
+    "οκτώ": "8",
+    "Τσάμπιονς": "Champions",
+    "Λιγκ": "League"
+  },
+  "hook_accent": [
+    "8",
+    "καλύτερους",
+    "Champions",
+    "League"
+  ],
+  "lines": [
+    "Πάμε πίσω, στις εφτά Μαρτίου του δύο χιλιάδες δώδεκα.",
+    "Ο Απόελ είχε χάσει ένα μηδέν στη Λυών. Στη ρεβάνς όμως, ο Μαντούκα σκόραρε, και η πρόκριση κρίθηκε στα πέναλτι!",
+    "Εκεί, ο Χιώτης έπιασε δύο πέναλτι, και ο Απόελ νίκησε τέσσερα τρία!",
+    "Και έγινε η πρώτη κυπριακή ομάδα που έφτασε στους οκτώ του Τσάμπιονς Λιγκ!"
+  ],
+  "cta": "Γράψε στα σχόλια την επόμενη ιστορική στιγμή που θες να δούμε, και κάνε φόλοου στο Κουπονάκι για περισσότερα!",
+  "emoji": {
+    "πέναλτι": "😱",
+    "χιώτης": "🧤",
+    "τρία": "🔥",
+    "λιγκ": "🏆"
+  },
+  "caption_replace": {
+    "εφτά Μαρτίου": "7 Μαρτίου",
+    "δύο χιλιάδες δώδεκα": "2012",
+    "ένα μηδέν": "1-0",
+    "τέσσερα τρία": "4-3",
+    "δύο πέναλτι": "2 πέναλτι",
+    "Τσάμπιονς Λιγκ": "Champions League",
+    "οκτώ": "8",
+    "Απόελ": "ΑΠΟΕΛ",
+    "φόλοου": "follow",
+    "Κουπονάκι": "Kouponaki"
+  },
+  "scenes": [
+    {
+      "type": "date",
+      "backdrop": "posts/apoel100_gsp_lyon_wide.jpg",
+      "label": "ΓΣΠ · ΑΠΟΕΛ - ΛΥΩΝ",
+      "day": "7",
+      "month": "Μαρτίου",
+      "year": "2012",
+      "day_at": {
+        "word": "εφτά"
+      },
+      "month_at": {
+        "word": "μαρτίου"
+      },
+      "year_at": {
+        "word": "δύο"
+      },
+      "year_end": {
+        "word": "δώδεκα",
+        "edge": "end"
+      },
+      "photo_card": "posts/apoel100_gsp_lyon.jpg",
+      "photo_at": {
+        "word": "πάμε"
+      },
+      "photo_x": 790,
+      "photo_y": 830,
+      "photo_rot": 6,
+      "photo_width": 340
+    },
+    {
+      "type": "score",
+      "photo": "posts/apoel_goal.jpg",
+      "focus": [
+        0.45,
+        0.4
+      ],
+      "home": "ΑΠΟΕΛ",
+      "home_color": [
+        30,
+        80,
+        190
+      ],
+      "away": "ΛΥΩΝ",
+      "away_color": [
+        200,
+        30,
+        50
+      ],
+      "away_crest": null,
+      "home_at": {
+        "word": "απόελ"
+      },
+      "away_at": {
+        "word": "απόελ",
+        "offset": 0.3
+      },
+      "score_at": {
+        "word": "χάσει",
+        "offset": -0.15
+      },
+      "timeline_at": {
+        "word": "ρεβάνς"
+      },
+      "goal": {
+        "minute": 9,
+        "label": "9'",
+        "at": {
+          "word": "μαντούκα"
+        }
+      },
+      "steps": [
+        {
+          "value": [
+            0,
+            1
+          ],
+          "at": {
+            "word": "χάσει"
+          },
+          "label": "1ο ΜΑΤΣ"
+        },
+        {
+          "value": [
+            1,
+            1
+          ],
+          "at": {
+            "word": "σκόραρε"
+          },
+          "label": "ΣΥΝΟΛΙΚΟ 1-1",
+          "label_at": {
+            "word": "πρόκριση"
+          }
+        }
+      ],
+      "badge": {
+        "text": "ΜΑΝΤΟΥΚΑ 9'",
+        "at": {
+          "word": "μαντούκα"
+        },
+        "x": 765,
+        "y": 560,
+        "rotate": 9
+      }
+    },
+    {
+      "type": "score",
+      "photo": "posts/apoel100_chiotis_save.jpg",
+      "focus": [
+        0.6,
+        0.5
+      ],
+      "timeline": false,
+      "home": "ΑΠΟΕΛ",
+      "home_color": [
+        30,
+        80,
+        190
+      ],
+      "away": "ΛΥΩΝ",
+      "away_color": [
+        200,
+        30,
+        50
+      ],
+      "away_crest": null,
+      "home_at": {
+        "word": "εκεί"
+      },
+      "away_at": {
+        "word": "εκεί",
+        "offset": 0.2
+      },
+      "score_at": {
+        "word": "χιώτης"
+      },
+      "steps": [
+        {
+          "value": [
+            0,
+            0
+          ],
+          "at": {
+            "word": "χιώτης"
+          },
+          "label": "ΠΕΝΑΛΤΙ"
+        },
+        {
+          "value": [
+            4,
+            3
+          ],
+          "at": {
+            "word": "νίκησε"
+          },
+          "label": "ΣΤΑ ΠΕΝΑΛΤΙ"
+        }
+      ],
+      "badge": {
+        "text": "2 ΑΠΟΚΡΟΥΣΕΙΣ!",
+        "at": {
+          "word": "δύο"
+        },
+        "x": 765,
+        "y": 560,
+        "rotate": 9
+      }
+    },
+    {
+      "type": "fact",
+      "photo": "posts/apoel100_chiotis.jpg",
+      "captions": false,
+      "words_style": "chunky",
+      "crest_y": 590,
+      "y": 770,
+      "words": [
+        {
+          "text": "ΠΡΩΤΗ",
+          "color": "white",
+          "max_size": 210,
+          "at": {
+            "word": "πρώτη"
+          }
+        },
+        {
+          "text": "ΚΥΠΡΙΑΚΗ ΟΜΑΔΑ",
+          "color": "yellow",
+          "max_size": 150,
+          "at": {
+            "word": "κυπριακή"
+          }
+        },
+        {
+          "text": "ΣΤΟΥΣ 8",
+          "color": "green",
+          "max_size": 190,
+          "at": {
+            "word": "στους"
+          }
+        },
+        {
+          "text": "ΤΟΥ CHAMPIONS LEAGUE",
+          "color": "white",
+          "max_size": 80,
+          "at": {
+            "word": "τσάμπιονς"
+          }
+        }
+      ],
+      "mascot_at": {
+        "word": "έγινε"
+      },
+      "confetti_at": {
+        "word": "οκτώ"
+      },
+      "stamp": {
+        "text": "ΙΣΤΟΡΙΚΟ!",
+        "at": {
+          "word": "λιγκ",
+          "edge": "end"
+        },
+        "x": 800,
+        "y": 640,
+        "rotate": 12
+      }
+    }
+  ],
+  "end": {
+    "photo": "posts/apoel_team.jpg"
+  }
+}
