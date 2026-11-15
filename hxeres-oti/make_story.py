@@ -373,7 +373,8 @@ class Story:
             import eleven_tts
             try:
                 raw = eleven_tts.one_take([l['text'] for l in lines], cfg['elevenlabs_voice'],
-                                          cfg.get('elevenlabs_model', 'eleven_v4'), cfg.get('elevenlabs_settings'), SR)
+                                          cfg.get('elevenlabs_model', 'eleven_v4'), cfg.get('elevenlabs_settings'), SR,
+                                          language=cfg.get('elevenlabs_language'))
             except Exception as e:                    # e.g. credits used up: the video still comes out, with Azure
                 print(f'WARNING: ElevenLabs failed ({str(e)[:160]}), falling back to Azure ({voice})', file=sys.stderr)
                 engine = None

@@ -14,7 +14,7 @@
   "caption_case": "as_is",
   "tail": 0.6,
   "hook": {
-    "text": "Ο Απόελ έφτασε στους οκτώ καλύτερους του Τσάμπιονς Λιγκ!"
+    "text": "Ο Απόελ έφτασε στα προημιτελικά του Τσάμπιονς Λιγκ!"
   },
   "hook_photo": "posts/apoel_team.jpg",
   "hook_focus": [
@@ -28,8 +28,7 @@
     "Απόελ": "ΑΠΟΕΛ"
   },
   "hook_accent": [
-    "8",
-    "καλύτερους",
+    "προημιτελικά",
     "Champions",
     "League"
   ],
@@ -288,5 +287,10 @@
   ],
   "end": {
     "photo": "posts/apoel_team.jpg"
-  }
+  },
+  "elevenlabs_settings": {
+    "stability": 0.72,
+    "similarity_boost": 0.74
+  },
+  "elevenlabs_language": "el"
 }
