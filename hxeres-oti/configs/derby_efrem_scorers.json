@@ -1,0 +1,111 @@
+{
+  "theme": "hybrid",
+  "photo": "posts/derby_2019_action.jpg",
+  "team": {
+    "name": "ΝΤΕΡΜΠΙ",
+    "color": [110, 120, 140],
+    "crest": "assets/omonoia_crest.png"
+  },
+  "caption_case": "as_is",
+  "tail": 0.6,
+  "elevenlabs_language": "el",
+  "hook": {
+    "text": "Ομόνοια και Απόελ: ο πρώτος σκόρερ στην ιστορία του ντέρμπι έβαλε γκολ και με τις δύο φανέλες!"
+  },
+  "hook_photo": "posts/efrem_apoel_derby_celebration.jpg",
+  "hook_focus": [0.28, 0.42],
+  "hook_replace": {"Απόελ": "ΑΠΟΕΛ"},
+  "hook_accent": ["Ομόνοια", "ΑΠΟΕΛ", "δύο"],
+  "lines": [
+    "Ο Σωτήρης Καϊάφας, ο θρύλος της Ομόνοιας με το Χρυσό Παπούτσι της Ευρώπης, έχει οκτώ γκολ στο ντέρμπι. Ο Ανδρέας Στυλιανού του Απόελ, έχει δέκα.",
+    "Πρώτος όμως, ο Γιώργος Εφραίμ, με έντεκα γκολ!",
+    "Ξεκίνησε με την πράσινη φανέλα της Ομόνοιας, και μετά πέρασε απέναντι, στον Απόελ, για δέκα χρόνια!",
+    "Το Σάββατο, ο Ντιονί και ο Μπακασέτας παίζουν το πρώτο τους ντέρμπι, με πέντε γκολ ο καθένας στο πρωτάθλημα.",
+    "Ένα γκολ στο Γα Σι Πι, και γράφουν το όνομά τους στη λίστα!"
+  ],
+  "cta": "Γράψε στα σχόλια ποιος θα σκοράρει το Σάββατο, και κάνε φόλοου στο Κουπονάκι για περισσότερα!",
+  "emoji": {"πράσινη": "💚", "Πρώτος": "👑"},
+  "caption_replace": {
+    "Απόελ": "ΑΠΟΕΛ",
+    "Γα Σι Πι": "ΓΣΠ",
+    "οκτώ": "8",
+    "έντεκα": "11",
+    "δέκα": "10",
+    "πέντε": "5",
+    "φόλοου": "follow",
+    "Κουπονάκι": "Kouponaki"
+  },
+  "scenes": [
+    {
+      "type": "stats",
+      "photo": "posts/derby_2019_action.jpg",
+      "focus": [0.45, 0.4],
+      "ph": 980,
+      "pill": "ΟΙ ΣΚΟΡΕΡ ΤΟΥ ΝΤΕΡΜΠΙ",
+      "pill_at": 0.0,
+      "items": [
+        {"value": 8, "label": "ΚΑΪΑΦΑΣ · ΟΜΟΝΟΙΑ", "color": "lime", "at": {"word": "οκτώ"}},
+        {"value": 10, "label": "ΣΤΥΛΙΑΝΟΥ · ΑΠΟΕΛ", "color": "yellow", "at": {"word": "δέκα"}}
+      ]
+    },
+    {
+      "type": "table",
+      "photo": "posts/efrem_apoel_farewell_2024.jpg",
+      "focus": [0.32, 0.35],
+      "ph": 980,
+      "title": "ΟΙ ΚΟΡΥΦΑΙΟΙ ΣΚΟΡΕΡ ΟΛΩΝ ΤΩΝ ΕΠΟΧΩΝ",
+      "title_at": 0.0,
+      "rows_at": {"word": "γιώργος"},
+      "rows": [
+        {"pos": 1, "name": "Γ. ΕΦΡΑΙΜ", "crest": "assets/omonoia_apoel_crests.png", "points": 11,
+         "color": [182, 255, 60], "highlight": true, "points_at": {"word": "έντεκα"}},
+        {"pos": 2, "name": "Α. ΣΤΥΛΙΑΝΟΥ", "crest": "assets/apoel_crest.png", "points": 10,
+         "color": [30, 80, 190], "points_at": {"word": "εφραίμ"}}
+      ],
+      "badge": {"text": "ΝΟ1!", "at": {"word": "γκολ"}, "x": 790, "y": 980, "rotate": 10}
+    },
+    {
+      "type": "fact",
+      "photo": "posts/efrem_apoel_derby_celebration.jpg",
+      "captions": false,
+      "words_style": "chunky",
+      "crest_y": 560,
+      "y": 790,
+      "crests": ["assets/omonoia_crest.png", "assets/apoel_crest.png"],
+      "vs": "→",
+      "crest_at": 0.0,
+      "words": [
+        {"text": "2009–2014 · ΟΜΟΝΟΙΑ", "color": "green", "max_size": 130, "at": {"word": "πράσινη"}},
+        {"text": "2014–2024 · ΑΠΟΕΛ", "color": "yellow", "max_size": 130, "at": {"word": "απέναντι"}}
+      ],
+      "stamp": {"text": "ΚΑΙ ΜΕ ΤΙΣ ΔΥΟ!", "at": {"word": "χρόνια"}, "x": 790, "y": 380, "rotate": 10}
+    },
+    {
+      "type": "gallery",
+      "label": {"text": "ΣΑΒΒΑΤΟ · ΤΟ ΠΡΩΤΟ ΤΟΥΣ ΝΤΕΡΜΠΙ", "at": 0.0},
+      "photos": [
+        {"photo": "posts/dioni_omonoia_2026.jpg", "at": 0.0, "focus": [0.22, 0.4]},
+        {"photo": "posts/bakasetas_apoel_2026.jpg", "at": {"word": "μπακασέτας"}, "focus": [0.5, 0.4]}
+      ],
+      "stickers": [
+        {"text": "5 ΓΚΟΛ Ο ΚΑΘΕΝΑΣ!", "at": {"word": "πέντε"}, "x": 515, "y": 1150, "rotate": -4, "max_size": 110}
+      ]
+    },
+    {
+      "type": "fact",
+      "photo": "posts/apoel_fans_flares_2026.jpg",
+      "captions": false,
+      "words_style": "chunky",
+      "crest_y": 560,
+      "y": 790,
+      "crests": ["assets/omonoia_crest.png", "assets/apoel_crest.png"],
+      "words": [
+        {"text": "ΣΑΒΒΑΤΟ · 17:00", "color": "white", "max_size": 140, "at": 0.0},
+        {"text": "ΓΣΠ", "color": "green", "max_size": 170, "at": {"word": "γα"}}
+      ],
+      "confetti_at": {"word": "λίστα"},
+      "stamp": {"text": "ΠΟΙΟΣ ΘΑ ΣΚΟΡΑΡΕΙ;", "at": {"word": "λίστα"}, "x": 790, "y": 380, "rotate": 10}
+    }
+  ],
+  "end": {"photo": "posts/dioni_omonoia_home_2026.jpg"}
+}

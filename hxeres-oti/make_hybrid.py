@@ -402,7 +402,7 @@ class Hybrid(Modern):
             c = c.resize((int(c.width * ch / c.height), ch), Image.LANCZOS)
             crests.append((c, glow_of(c, 20, (150, 255, 110))[0]))
         xs = [0] if len(crests) == 1 else [-215, 215]
-        vs = fit_text('VS', 'yellow', 200, 110) if len(crests) == 2 else None
+        vs = fit_text(sc.get('vs', 'VS'), 'yellow', 200, 110) if len(crests) == 2 else None   # e.g. «→» for a transfer
         R = 560
         rays = Image.new('L', (R, R), 0)
         dr = ImageDraw.Draw(rays)
