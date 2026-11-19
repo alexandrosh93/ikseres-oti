@@ -62,7 +62,7 @@
         {"pos": 2, "name": "Α. ΣΤΥΛΙΑΝΟΥ", "crest": "assets/apoel_crest.png", "points": 10,
          "color": [30, 80, 190], "points_at": {"word": "εφραίμ"}}
       ],
-      "badge": {"text": "ΝΟ1!", "at": {"word": "γκολ"}, "x": 790, "y": 980, "rotate": 10}
+      "badge": {"text": "ΝΟ1!", "at": {"word": "γκολ"}, "x": 860, "y": 850, "rotate": 10}
     },
     {
       "type": "fact",
