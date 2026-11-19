@@ -1,6 +1,6 @@
 {
   "theme": "hybrid",
-  "photo": "posts/apoel100_gsp_lyon_wide.jpg",
+  "photo": "posts/derby_omonoia_stands_2026.jpg",
   "team": {
     "name": "ΝΤΕΡΜΠΙ",
     "color": [
@@ -53,7 +53,7 @@
   "scenes": [
     {
       "type": "date",
-      "backdrop": "posts/apoel100_gsp_lyon_wide.jpg",
+      "backdrop": "posts/derby_omonoia_stands_2026.jpg",
       "label": "10η ΑΓΩΝΙΣΤΙΚΗ · ΓΣΠ",
       "day": "21",
       "month": "Νοεμβρίου",
@@ -71,7 +71,7 @@
         "word": "απόγευμα",
         "edge": "end"
       },
-      "photo_card": "posts/apoel100_gsp_lyon.jpg",
+      "photo_card": "posts/derby_apoel_orange_2026.jpg",
       "photo_at": {
         "word": "γα"
       },
@@ -88,20 +88,20 @@
       },
       "photos": [
         {
-          "photo": "posts/omonoia_fans_today.jpg",
+          "photo": "posts/derby_omonoia_stands_2026.jpg",
           "at": 0.0,
           "focus": [
-            0.45,
+            0.55,
             0.5
           ]
         },
         {
-          "photo": "posts/apoel100_fans.jpg",
+          "photo": "posts/derby_apoel_orange_2026.jpg",
           "at": {
             "word": "άλλη"
           },
           "focus": [
-            0.45,
+            0.6,
             0.5
           ]
         }
@@ -121,7 +121,7 @@
     },
     {
       "type": "fact",
-      "photo": "posts/apoel100_gsp_lyon_wide.jpg",
+      "photo": "posts/derby_omonoia_stands_2026.jpg",
       "captions": false,
       "words_style": "chunky",
       "crest_y": 560,
@@ -178,6 +178,6 @@
     }
   ],
   "end": {
-    "photo": "posts/apoel100_gsp_lyon_wide.jpg"
+    "photo": "posts/derby_apoel_orange_2026.jpg"
   }
 }
