@@ -1,0 +1,182 @@
+{
+  "theme": "hybrid",
+  "photo": "posts/apoel100_gsp_lyon_wide.jpg",
+  "team": {
+    "name": "ΝΤΕΡΜΠΙ",
+    "color": [
+      110,
+      120,
+      140
+    ],
+    "crest": "assets/omonoia_crest.png",
+    "mascot": "assets/omonoia_mascot.png"
+  },
+  "caption_case": "as_is",
+  "tail": 0.6,
+  "elevenlabs_language": "el",
+  "hook": {
+    "text": "Ομόνοια και Απόελ, το Σάββατο η Λευκωσία χωρίζεται στα δύο!"
+  },
+  "hook_photo": "posts/apoel100_gsp_lyon_wide.jpg",
+  "hook_focus": [
+    0.5,
+    0.38
+  ],
+  "hook_replace": {
+    "Απόελ": "ΑΠΟΕΛ"
+  },
+  "hook_accent": [
+    "Ομόνοια",
+    "ΑΠΟΕΛ",
+    "δύο"
+  ],
+  "lines": [
+    "Σάββατο, είκοσι μία Νοεμβρίου, στις πέντε το απόγευμα, στο ΓΣΠ.",
+    "Από τη μία, η πράσινη κερκίδα. Από την άλλη, η μπλε και κίτρινη!",
+    "Ενενήντα λεπτά, και μόνο τρία σημεία μετράνε: ο Άσσος, το Χι, και το Διπλό!"
+  ],
+  "cta": "Γράψε στα σχόλια το δικό σου σημείο, και κάνε φόλοου στο Κουπονάκι για περισσότερα!",
+  "emoji": {
+    "πράσινη": "💚",
+    "κίτρινη": "💙💛"
+  },
+  "caption_replace": {
+    "είκοσι μία Νοεμβρίου": "21 Νοεμβρίου",
+    "πέντε το απόγευμα": "17:00",
+    "Ενενήντα": "90",
+    "Απόελ": "ΑΠΟΕΛ",
+    "Χι": "Χ",
+    "φόλοου": "follow",
+    "Κουπονάκι": "Kouponaki"
+  },
+  "scenes": [
+    {
+      "type": "date",
+      "backdrop": "posts/apoel100_gsp_lyon_wide.jpg",
+      "label": "10η ΑΓΩΝΙΣΤΙΚΗ · ΓΣΠ",
+      "day": "21",
+      "month": "Νοεμβρίου",
+      "year": "17:00",
+      "day_at": {
+        "word": "είκοσι"
+      },
+      "month_at": {
+        "word": "νοεμβρίου"
+      },
+      "year_at": {
+        "word": "πέντε"
+      },
+      "year_end": {
+        "word": "απόγευμα",
+        "edge": "end"
+      },
+      "photo_card": "posts/apoel100_gsp_lyon.jpg",
+      "photo_at": {
+        "word": "γσπ"
+      },
+      "photo_x": 820,
+      "photo_y": 450,
+      "photo_rot": 6,
+      "photo_width": 320
+    },
+    {
+      "type": "gallery",
+      "label": {
+        "text": "ΟΜΟΝΟΙΑ - ΑΠΟΕΛ · ΣΑΒΒΑΤΟ 17:00",
+        "at": 0.0
+      },
+      "photos": [
+        {
+          "photo": "posts/omonoia_fans_today.jpg",
+          "at": 0.0,
+          "focus": [
+            0.45,
+            0.5
+          ]
+        },
+        {
+          "photo": "posts/apoel100_tifo.jpg",
+          "at": {
+            "word": "άλλη"
+          },
+          "focus": [
+            0.5,
+            0.45
+          ]
+        }
+      ],
+      "stickers": [
+        {
+          "text": "ΠΡΑΣΙΝΟ Ή ΜΠΛΕ-ΚΙΤΡΙΝΟ;",
+          "at": {
+            "word": "κίτρινη"
+          },
+          "x": 515,
+          "y": 1150,
+          "rotate": -4,
+          "max_size": 110
+        }
+      ]
+    },
+    {
+      "type": "fact",
+      "photo": "posts/apoel100_gsp_lyon_wide.jpg",
+      "captions": false,
+      "words_style": "chunky",
+      "crest_y": 560,
+      "y": 790,
+      "crests": [
+        "assets/omonoia_crest.png",
+        "assets/apoel_crest.png"
+      ],
+      "mascots": [
+        "assets/omonoia_mascot.png",
+        "assets/apoel_mascot.png"
+      ],
+      "words": [
+        {
+          "text": "1 · ΟΜΟΝΟΙΑ",
+          "color": "green",
+          "max_size": 150,
+          "at": {
+            "word": "άσσος"
+          }
+        },
+        {
+          "text": "Χ · ΙΣΟΠΑΛΙΑ",
+          "color": "white",
+          "max_size": 150,
+          "at": {
+            "word": "χι"
+          }
+        },
+        {
+          "text": "2 · ΑΠΟΕΛ",
+          "color": "yellow",
+          "max_size": 150,
+          "at": {
+            "word": "διπλό"
+          }
+        }
+      ],
+      "mascot_at": {
+        "word": "λεπτά"
+      },
+      "confetti_at": {
+        "word": "διπλό"
+      },
+      "stamp": {
+        "text": "ΝΤΕΡΜΠΙ!",
+        "at": {
+          "word": "ενενήντα"
+        },
+        "x": 790,
+        "y": 380,
+        "rotate": 10
+      }
+    }
+  ],
+  "end": {
+    "photo": "posts/apoel100_gsp_lyon_wide.jpg"
+  }
+}
